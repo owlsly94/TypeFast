@@ -2,6 +2,7 @@ let words;
 let currentWord;
 let userInput = "";
 let score = 0;
+let mistakes = 0; // Added mistakes counter
 let timer;
 let isGameStarted = false;
 
@@ -47,8 +48,16 @@ function checkInput() {
         userInput = "";
         score++;
         updateDisplay();
+    } else if (userInput.length === currentWord.length) {
+        for (let i = 0; i < currentWord.length; i++) {
+            if (userInput[i] !== currentWord[i]) {
+                mistakes++; // Increment mistakes counter for each red letter
+            }
+        }
+        updateDisplay();
     }
 }
+
 
 function startTimer() {
     let timeLeft = 60;
@@ -66,7 +75,7 @@ function startTimer() {
 
 function gameOver() {
     clearInterval(timer);
-    document.getElementById("game-over-message").textContent = `You wrote ${score} words per minute.`;
+    document.getElementById("game-over-message").textContent = `You wrote ${score} words per minute with ${mistakes} mistakes.`;
     document.getElementById("play-again-button").style.display = "block";
 
     // Hide game elements
@@ -78,6 +87,7 @@ function gameOver() {
 
 function resetGame() {
     score = 0;
+    mistakes = 0; // Reset mistakes counter
     currentWord = generateWord();
     userInput = "";
     document.getElementById("game-over-message").textContent = "";
