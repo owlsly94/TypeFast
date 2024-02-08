@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+input {
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #45475a;
+    color: #cdd6f4;
+    border: none;
+    outline-style: none;
+    max-width: 300px;
+}
+
+#word-display {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#timer, #score, #game-over-message {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#game-over-message {
+    font-size: 2.2em;
+    color: #cba6f7;
+    max-width: 350px;
+}
+
+#timer {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+#start-button, #play-again-button {
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #61dafb;
+    color: #1e1e2e;
+    border: none;
+    cursor: pointer;
+}
+
+#start-button:hover {
+    background-color: #2ecc71;
+}
+
+#play-again-button {
+    background-color: #2ecc71;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#play-again-button:hover {
+    background-color: #cba6f7;
+}
+
+#word-display,
+    #user-input,
+    #timer,
+    #score,
+    #play-again-button {
+        display: none;
+    }
+
+    #start-button {
+        display: block; /* Ensure the start button is initially visible */
+    }
